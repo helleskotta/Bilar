@@ -1,0 +1,135 @@
+﻿body {
+    font-family: 'Open Sans';
+    font-size: 15px;
+    background: url(http://i.imgur.com/uujoS2S.gif) no-repeat bottom left fixed;
+}
+
+#wrapper{
+    width:500px;
+    margin:auto;
+    text-align:left;
+}
+
+#header {
+    background: url('images/logocar.png') no-repeat center center;
+    background-size: 400px;
+    height: 130px;
+}
+
+a {
+    text-decoration:none;
+    color: black;
+}
+
+a:hover {
+    color: #C0C0C0;
+    text-decoration: underline overline;
+}
+
+h1, h2, h3{
+    font-family: 'Titillium Web';
+    text-transform:uppercase;
+}
+
+h1{
+    text-align:center;
+}
+
+table{
+    padding:20px;
+}
+
+    table tr, td {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+
+.tabs {
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: #633C9C;
+    filter: alpha(opacity=75);
+    opacity: 0.75;
+    font-size: 14px;
+    border:2px solid black;
+    border-radius:20px;
+    margin-top:20px;
+}
+
+    .tabs ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        padding-left: 20px;
+    }
+
+    .tabs li {
+        display: inline;
+    }
+
+        .tabs li a {
+            float: left;
+            display: block;
+            text-decoration: none;
+            padding: 7px 50px;
+            color: white;
+        }
+
+            .tabs li a:visited {
+                color: white;
+            }
+
+            .tabs li a:hover, .tabs li.selected a {
+                background: #8C75AC;
+                opacity: 0.8;
+                border-radius: 20px;
+            }
+
+input[type=text], [type=number] {
+    border: 2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    width:130px;
+}
+
+label{
+    font-size:11px;
+}
+
+    input[type=text]:focus, [type=number]:focus {
+        border-color: #333;
+    }
+
+input[type=submit], [type=button] {
+    padding: 5px 15px;
+    background: #422869;
+    color: #fff;
+    border: 0 none;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 11px;
+    text-transform: uppercase;
+    text-align:left;
+    font-family: 'Titillium Web';
+}
+
+    input[type=submit]:hover, [type=button]:hover {
+        filter: alpha(opacity=75);
+        opacity: 0.75;
+    }
+
+select {
+    border: 2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+    select:focus {
+        border: 2px solid #ccc;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    }

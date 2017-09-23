@@ -1,0 +1,38 @@
+﻿@model CarsCreateVM
+@{
+    ViewBag.Title = nameof(CarsController.Create);
+}
+
+<form asp-controller="cars" asp-action="create">
+    <table>
+        <tr style="background:white;">
+            <td><label asp-for="Brand"></label> <span asp-validation-for="Brand" style="color:red;"></span></td>
+            <td><label asp-for="Doors"></label> <span asp-validation-for="Doors" style="color:red;"></span></td>
+            <td><label asp-for="TopSpeed"></label> <span asp-validation-for="TopSpeed" style="color:red;"></span></td>
+        </tr>
+        <tr style="background:white;">
+            <td>
+                <input asp-for="Brand" />
+            </td>
+            <td>
+                <select asp-for="SelectedDoors" asp-items="Model.DoorItems"></select>
+                <span asp-validation-for="SelectedDoors"></span>
+            </td>
+            <td>
+                <input asp-for="TopSpeed" />
+            </td>
+            </tr>
+        <tr>
+            <td><br />
+                <input type="submit" value="Registrera" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+@section scripts 
+{
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.0.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
+}

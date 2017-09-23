@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Titillium+Web|Roboto" rel="stylesheet">
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+    <script src="~/JavaScript.js"></script>
+    <title>Cars - @ViewBag.Title</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            @*<h1>CARS - @ViewBag.Title</h1>*@
+        </div>
+        <div class="tabs">
+            <ul>
+                <!-- TODO DYNAMISK -->
+                <li><a href="/cars/index">@nameof(CarsController.Index)</a></li>
+                <li><a href="/cars/create">@nameof(CarsController.Create)</a></li>
+                <li><a href="/cars/#">About</a></li>
+            </ul>
+        </div>
+        @RenderBody()
+    </div>
+    @RenderSection("scripts", false)
+</body>
+</html>

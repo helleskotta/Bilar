@@ -1,0 +1,64 @@
+﻿@model CarsIndexVM
+@{
+    ViewBag.Title = nameof(CarsController.Index);
+}
+    <table style="width:100%; margin-left:30px;">
+        <tr>
+            <th width="40%"><h2>Brand<span style="font-size:12px; margin-left:15px;"><font color="#E8A30F">✦</font> Fast cars</span></h2></th>
+            <th width="40%"><h2>Owner</h2></th>
+        </tr>
+        <tbody>
+            @foreach (var item in Model.ListViewModels)
+            {
+                if (item.ShowAsFast)
+                {
+                    <tr>
+                        <td><a asp-controller="Cars" asp-action="Details" asp-route-id="@item.Id">@item.Brand</a> <font color="#E8A30F">✦</font></td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td><a asp-controller="Cars" asp-action="Details" asp-route-id="@item.Id">@item.Brand</a> </td>
+                        
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+
+<form asp-controller="cars" asp-action="create">
+    <table>
+        <tr style="background:white;">
+            <td><label asp-for="FormViewModel.Brand"></label> <span asp-validation-for="FormViewModel.Brand" style="color:red;"></span></td>
+            <td><label asp-for="FormViewModel.Doors"></label> <span asp-validation-for="FormViewModel.Doors" style="color:red;"></span></td>
+            <td><label asp-for="FormViewModel.TopSpeed"></label> <span asp-validation-for="FormViewModel.TopSpeed" style="color:red;"></span></td>
+        </tr>
+        <tr style="background:white;">
+            <td>
+                <input asp-for="FormViewModel.Brand" />
+            </td>
+            <td>
+                <select asp-for="FormViewModel.SelectedDoors" asp-items="Model.FormViewModel.DoorItems"></select>
+                <span asp-validation-for="FormViewModel.SelectedDoors"></span>
+            </td>
+            <td>
+                <input asp-for="FormViewModel.TopSpeed" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br />
+                <input type="submit" value="Registrera" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+@section scripts
+    {
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.0.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
+}

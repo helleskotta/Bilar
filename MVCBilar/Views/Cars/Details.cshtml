@@ -1,0 +1,15 @@
+﻿@model CarsDetailsVM
+@{
+    ViewBag.Title = nameof(CarsController.Details);
+}
+
+<h1>@Model.Brand</h1>
+<h3 style="text-align:center;">Owner: </h3>
+<p><b>Doors: </b>@Model.Doors</p>
+<span><b>Top speed: </b>@Model.TopSpeed m/h
+
+        @if (Model.ShowAsFast == true)
+        {
+            <span>- which means it's really fast!</span>
+     }
+    </span>
